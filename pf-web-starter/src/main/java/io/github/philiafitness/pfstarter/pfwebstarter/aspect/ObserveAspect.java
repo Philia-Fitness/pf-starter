@@ -1,7 +1,7 @@
 package io.github.philiafitness.pfstarter.pfwebstarter.aspect;
 
-import it.sisal.digital.npplstarter.npplwebstarter.bean.response.NpplBaseResponse;
-import it.sisal.digital.npplstarter.npplwebstarter.enums.ResponseCodesEnum;
+import io.github.philiafitness.pfstarter.pfwebstarter.bean.response.BaseResponse;
+import io.github.philiafitness.pfstarter.pfwebstarter.enums.ResponseCodesEnum;
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -19,7 +19,7 @@ public class ObserveAspect {
         log.info("Init {}", this.getClass().getSimpleName());
     }
 
-    @Pointcut("@annotation(it.sisal.digital.npplstarter.npplwebstarter.aspect.Observe)")
+    @Pointcut("@annotation(io.github.philiafitness.pfstarter.pfwebstarter.aspect.Observe)")
     public void annotationPoint() {
     }
 
@@ -29,8 +29,8 @@ public class ObserveAspect {
             return joinPoint.proceed();
         } catch (Exception e) {
             log.error("Exception occurred", e);
-            return NpplBaseResponse.builder()
-                    .responseCode(ResponseCodesEnum.GENERIC_ERROR.getNpplErrorCode())
+            return BaseResponse.builder()
+                    .responseCode(ResponseCodesEnum.GENERIC_ERROR.getErrorCode())
                     .responseMessage(ResponseCodesEnum.GENERIC_ERROR.getDescription())
                     .status(ResponseCodesEnum.GENERIC_ERROR.getStatus())
                     .build();
