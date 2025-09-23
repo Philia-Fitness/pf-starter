@@ -34,6 +34,12 @@ public enum ResponseCodesEnum {
     GENERIC_ERROR(-500, "Generic Error", HttpStatus.INTERNAL_SERVER_ERROR, FAILURE),
     NOT_IMPLEMENTED(-501, "Not Implemented", HttpStatus.NOT_IMPLEMENTED, FAILURE),
 
+    BAD_CREDENTIALS(-101, "Invalid credentials", HttpStatus.UNAUTHORIZED, FAILURE),
+    INVALID_CLIENT_CONFIGURATION(-102, "Invalid auth client configuration", HttpStatus.SERVICE_UNAVAILABLE, FAILURE),
+    UNAUTHORIZED_CLIENT(-103, "Auth client is not authorized to perform invoked operation", HttpStatus.INTERNAL_SERVER_ERROR, FAILURE),
+    BAD_GRANT_TYPE(-104, "Unsupported grant type", HttpStatus.SERVICE_UNAVAILABLE, FAILURE),
+
+
     UNAUTHORIZED(-107, "Unauthorized", HttpStatus.UNAUTHORIZED, FAILURE),
     FORBIDDEN(-108, "Forbidden", HttpStatus.FORBIDDEN, FAILURE);
 
