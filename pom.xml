@@ -38,6 +38,14 @@
         </license>
     </licenses>
 
+    <repositories>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/Philia-Fitness/*</url>
+        </repository>
+    </repositories>
+
     <artifactId>pf-starter</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
